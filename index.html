@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+        integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+        crossorigin="anonymous"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="./index.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="right">
+            <div>
+                <input type="text" id="name"><label for="name">שם מלא </label>
+            </div>
+            <div>
+                <input type="text" id="phone"><label for="phone">טלפון </label>
+            </div>
+            <div>
+                <input type="text" id="adress"><label for="adress">כתובת</label>
+            </div>
+            <div>
+                <select name="order" id="order" multiple>
+                    <option value="sweet chala">
+                        חלה מתוקה
+                    </option>
+                    <option value="salt chala">
+                        חלה רגילה שומשום
+                    </option>
+                    <option value="whole chala">
+                        חיטה מלאה
+                    </option>
+                    <option value="kosmin chala">
+                        חלה כוסמין
+                    </option>
+                    <option value="kasten">
+                        קסטן
+                    </option>
+                    <option value="african">
+                        פאן בריא אפריקאי
+                    </option>
+                    <option value="shiphon">
+                        שיפון אגוזים
+                    </option>
+                    <option value="kosmin">
+                        כוסמין 100%
+                    </option>
+                    <option value="deganim">
+                        דגנים
+                    </option>
+                    <option value="villge">
+                        כפרי
+                    </option>
+                    <option value="tomato">
+                        עגבניות מיובשות
+                    </option>
+                    <option value="olive">
+                        זיתים
+                    </option>
+                    <option value="kosminolive">
+                        כוסמין קצח שומשום
+                    </option>
+                </select>
+                <label for="order">סוג הלחם </label>
+            </div>
+            <div>
+                <input type="number" id="amount"><label for="amount">כמות </label>
+            </div>
+            <button id="moreTypes">עוד סוג לחם</button>
+
+            <button id="sell">מכירה</button>
+        </div>
+
+        <h1 style="text-align: center;">הזמנות</h1>
+        <div class="table" id="first_row">
+            <div>
+                ההזמנה נמסרה
+            </div>
+            <div>
+                מחיר לגבות מהלקוח
+            </div>
+            <div>
+                עלות
+            </div>
+            <div>
+                הזמנה
+            </div>
+            <div>
+                כתובת
+            </div>
+            <div>
+                טלפון
+            </div>
+            <div>
+                שם מלא
+            </div>
+            <div>
+                תאריך
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+
+
+.right{
+    width: 40%;
+    margin-left: auto;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+
+.table{
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#sell{
+  background-color:darkturquoise; 
+    margin-top:20px ;
+}
