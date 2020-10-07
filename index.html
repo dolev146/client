@@ -6,106 +6,261 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
-        integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
-        crossorigin="anonymous"></script>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
     <script src="./index.js" defer></script>
 </head>
 
+
+
 <body>
-    <div id="container">
-        <div class="right">
-            <div>
-                <input type="text" id="name"><label for="name">שם מלא </label>
-            </div>
-            <div>
-                <input type="text" id="phone"><label for="phone">טלפון </label>
-            </div>
-            <div>
-                <input type="text" id="adress"><label for="adress">כתובת</label>
-            </div>
-            <div>
-                <select name="order" id="order" multiple>
-                    <option value="sweet chala">
-                        חלה מתוקה
-                    </option>
-                    <option value="salt chala">
-                        חלה רגילה שומשום
-                    </option>
-                    <option value="whole chala">
-                        חיטה מלאה
-                    </option>
-                    <option value="kosmin chala">
-                        חלה כוסמין
-                    </option>
-                    <option value="kasten">
-                        קסטן
-                    </option>
-                    <option value="african">
-                        פאן בריא אפריקאי
-                    </option>
-                    <option value="shiphon">
-                        שיפון אגוזים
-                    </option>
-                    <option value="kosmin">
-                        כוסמין 100%
-                    </option>
-                    <option value="deganim">
-                        דגנים
-                    </option>
-                    <option value="villge">
-                        כפרי
-                    </option>
-                    <option value="tomato">
-                        עגבניות מיובשות
-                    </option>
-                    <option value="olive">
-                        זיתים
-                    </option>
-                    <option value="kosminolive">
-                        כוסמין קצח שומשום
-                    </option>
-                </select>
-                <label for="order">סוג הלחם </label>
-            </div>
-            <div>
-                <input type="number" id="amount"><label for="amount">כמות </label>
-            </div>
-            <button id="moreTypes">עוד סוג לחם</button>
-
-            <button id="sell">מכירה</button>
-        </div>
-
-        <h1 style="text-align: center;">הזמנות</h1>
-        <div class="table" id="first_row">
-            <div>
-                ההזמנה נמסרה
-            </div>
-            <div>
-                מחיר לגבות מהלקוח
-            </div>
-            <div>
-                עלות
-            </div>
-            <div>
-                הזמנה
-            </div>
-            <div>
-                כתובת
-            </div>
-            <div>
-                טלפון
-            </div>
-            <div>
-                שם מלא
-            </div>
-            <div>
-                תאריך
-            </div>
-        </div>
+    <div style="text-align: center;">
+        <input id="name" type="text"><label for="name">שם מלא</label>
     </div>
+    <div style="text-align: center;">
+        <input id="adress" type="text"><label for="adress">כתובת</label>
+    </div>
+    <div style="text-align: center;">
+        <input id="phone" type="text"><label for="phone">טלפון</label>
+    </div>
+
+    <div class="btn-container">
+        <button style="margin-left: 0; margin-right: 0;" id="more_breads">תפריט לחמים</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="bread_menu">
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_bread1" class="btn btn-primary"> קסטן קל </button>
+            <span class="badge badge-dark" id="Span_bread1">0</span>
+        </div>
+
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_bread2" class="btn btn-primary"> קסטן דגנים </button>
+            <span class="badge badge-dark" id="Span_bread2">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread3" class="btn btn-info"> שיפון אגוזים </button>
+            <span class="badge badge-dark" id="Span_bread3"> 0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread4" class="btn btn-info"> לחם בצל </button>
+            <span class="badge badge-dark" id="Span_bread4">0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread5" class="btn btn-info"> לחם עגבניה </button>
+            <span class="badge badge-dark" id="Span_bread5">0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread6" class="btn btn-info"> צימוקים ואגוזים </button>
+            <span class="badge badge-dark" id="Span_bread6">0</span>
+        </div>
+
+        <div>
+            <button data-sale="3" data-price="22" id="Btn_bread7" class="btn btn-warning"> כוסמין 100% </button>
+            <span class="badge badge-dark" id="Span_bread7">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread8" class="btn btn-info"> כוסמין עם קצח </button>
+            <span class="badge badge-dark" id="Span_bread8"> 0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread9" class="btn btn-info"> שיפון חמניות 100% </button>
+            <span class="badge badge-dark" id="Span_bread9">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread10" class="btn btn-info"> לחם דלעת </button>
+            <span class="badge badge-dark" id="Span_bread10">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread11" class="btn btn-info"> לחם דגנים </button>
+            <span class="badge badge-dark" id="Span_bread11">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="3" data-price="22" id="Btn_bread12" class="btn btn-warning"> לחם אפריקאי פאן בריא
+            </button>
+            <span class="badge badge-dark" id="Span_bread12"> 0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread13" class="btn btn-info"> לחם זיתים </button>
+            <span class="badge badge-dark" id="Span_bread13">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread14" class="btn btn-info"> לחם שיפון </button>
+            <span class="badge badge-dark" id="Span_bread14"> 0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread15" class="btn btn-info"> לחם כפרי </button>
+            <span class="badge badge-dark" id="Span_bread15">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread16" class="btn btn-info"> חלה רגילה </button>
+            <span class="badge badge-dark" id="Span_bread16"> 0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread17" class="btn btn-info"> חלה מתוקה </button>
+            <span class="badge badge-dark" id="Span_bread17">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread18" class="btn btn-info"> חלה חיטה מלאה </button>
+            <span class="badge badge-dark" id="Span_bread18">0 </span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread19" class="btn btn-info"> חלה כוסמין </button>
+            <span class="badge badge-dark" id="Span_bread19">0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread20" class="btn btn-info">לחם סלק </button>
+            <span class="badge badge-dark" id="Span_bread20">0</span>
+        </div>
+
+        <div>
+            <button data-sale="2" data-price="20" id="Btn_bread21" class="btn btn-info">לחם פרג </button>
+            <span class="badge badge-dark" id="Span_bread21">0</span>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div id="horizantal_line">
+        _____________________________________________________________________________________________________________________________________
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="btn-container">
+        <button id="more_mitbalim">תפריט מטבלים</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="bread_menu">
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_mitbalim1" class="btn btn-primary"> פסטו </button>
+            <div id="Span_mitbalim1">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_mitbalim2" class="btn btn-primary"> עגבניות מיובשות </button>
+            <div id="Span_mitbalim2">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_mitbalim3" class="btn btn-primary"> צ'ימיצ'ורי </button>
+            <div id="Span_mitbalim3">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_mitbalim4" class="btn btn-primary"> טפנד זיתים ירוקים
+            </button>
+            <div id="Span_mitbalim4">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_mitbalim5" class="btn btn-primary"> ארטישוק </button>
+            <div id="Span_mitbalim5">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_mitbalim6" class="btn btn-primary"> שטה עגבניות </button>
+            <div id="Span_mitbalim6">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="25" id="Btn_mitbalim7" class="btn btn-primary"> טפנד קלמטה </button>
+            <div id="Span_mitbalim7">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="30" id="Btn_mitbalim8" class="btn btn-success"> פסטו בולגרית </button>
+            <div id="Span_mitbalim8">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="30" id="Btn_mitbalim9" class="btn btn-success"> עגבניות מיובשות בולגרית
+            </button>
+            <div id="Span_mitbalim9">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="30" id="Btn_mitbalim10" class="btn btn-success"> חמאת פטריות כמהין
+            </button>
+            <div id="Span_mitbalim10">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="30" id="Btn_mitbalim11" class="btn btn-success"> חמאת עגבניות </button>
+            <div id="Span_mitbalim11">0</div>
+        </div>
+
+        <div>
+            <button data-sale="1" data-price="30" id="Btn_mitbalim12" class="btn btn-success"> חמאת עשבי תיבול/שום
+            </button>
+            <div id="Span_mitbalim12">0</div>
+        </div>
+
+
+
+
+
+    </div>
+    <br>
+    <br><br>
+
+
+    <div class="btn-container">
+        <button type="button" class="btn btn-danger btn-lg" id="place_order">
+            סיום הזמנה
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th> סה"כ לתשלום</th>
+                <th>משלוח</th>
+                <th>לחמים</th>
+                <th>מטבלים</th>
+                 <th>כתובת</th>
+                <th>טלפון</th>
+                <th>שם</th>
+                <th>תאריך</th>
+            </tr>
+        </thead>
+        <tbody id="tbody" >
+        </tbody>
+    </table>
 
 </body>
 
