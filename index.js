@@ -12,6 +12,8 @@ let sales = {
     sale_3: 0 // reduce 4 shekels if 2 
 }
 
+
+
 // let order = [{
 //     name: "dolev",
 //     adress: "שמעון 146",
@@ -311,11 +313,11 @@ Btn_place_order.addEventListener("click", () => {
 
             let bread_sale = document.querySelector(`#Btn_bread${i}`).dataset.sale
             if (bread_sale === "1") {
-                sales.sale_1++
+                sales.sale_1 += bread_amount
             } else if (bread_sale === "2") {
-                sales.sale_2++
+                sales.sale_2 += bread_amount
             } else if (bread_sale === "3") {
-                sales.sale_3++
+                sales.sale_3 += bread_amount
             }
 
 
@@ -354,11 +356,11 @@ Btn_place_order.addEventListener("click", () => {
 
             let bread_sale = document.querySelector(`#Btn_mitbalim${j}`).dataset.sale
             if (bread_sale === "1") {
-                sales.sale_1++
+                sales.sale_1 += mitbal_amount
             } else if (bread_sale === "2") {
-                sales.sale_2++
+                sales.sale_2 += mitbal_amount
             } else if (bread_sale === "3") {
-                sales.sale_3++
+                sales.sale_3 += mitbal_amount
             }
 
 
@@ -377,19 +379,63 @@ Btn_place_order.addEventListener("click", () => {
     }, 0)
 
 
-    if (sales.sale_1 && sales.sale_1 % 3 === 0) {
-        total_price = total_price - 10
+
+    // sale_CounterObj.sale1_counter
+
+    while (sales.sale_1) {
+        if (sales.sale_1 > 4) {
+            total_price = total_price - 25
+            sales.sale_1 = sales.sale_1 - 4
+            if (sales.sale_1 > 3) {
+                total_price = total_price - 10
+                sales.sale_1 = sales.sale_1 - 3
+            }
+        } else if (sales.sale_1 > 3) {
+            total_price = total_price - 10
+            sales.sale_1 = sales.sale_1 - 3
+        } else {
+            sales.sale_1 = 0
+        }
+
     }
-    if (sales.sale_1 && sales.sale_1 % 4 === 0) {
-        if (breads[4]) { total_price = total_price - breads[4].bread_price }
-        else if (mitbalim[4]) { total_price = total_price - mitbalim[4].mitbal_price }
+
+    while (sales.sale_2) {
+        if (sales.sale_2 >= 2) {
+            total_price = total_price - 5
+            sales.sale_2 = sales.sale_2 - 2
+        }
+        if (sales.sale_3 <= 0) {
+            break;
+        }
     }
-    if (sales.sale_2 && sales.sale_2 % 2 === 0) {
-        total_price = total_price - 5
+
+    while (sales.sale_3) {
+        if (sales.sale_3 >= 2) {
+            total_price = total_price - 4
+            sales.sale_3 = sales.sale_3 - 2
+        }
+        if (sales.sale_3 <= 0) {
+            break;
+        }
     }
-    if (sales.sale_3 && sales.sale_3 % 2 === 0) {
-        total_price = total_price - 4
-    }
+
+
+    // if (sales.sale_1 && sales.sale_1 % 4 === 0) {
+    //     if (breads[4]) { total_price = total_price - breads[4].bread_price }
+    //     else if (mitbalim[4]) { total_price = total_price - mitbalim[4].mitbal_price }
+    // }
+    // if (sales.sale_1 && sales.sale_1 % 3 === 0) {
+    //     total_price = total_price - 10
+    // }
+
+    // if (sales.sale_2 && sales.sale_2 % 2 === 0) {
+    //     total_price = total_price - 5
+    // }
+    // if (sales.sale_3 && sales.sale_3 % 2 === 0) {
+    //     total_price = total_price - 4
+    // }
+
+
     console.log(total_price)
 
 
@@ -402,7 +448,7 @@ Btn_place_order.addEventListener("click", () => {
 
     let delivery = 10;
 
-    total_price = total_price + delivery
+
 
     let order = {
         name,
@@ -444,15 +490,16 @@ Btn_place_order.addEventListener("click", () => {
             <br> 
             ${b.mitbal_amount} כמות
                 <br> 
-                מחיר ליחידה  ${b.mitbal_price} 
+                מחיר לפני הנחה  ${b.mitbal_price} 
                 <br>
             `
         ))
 
         return (
             `<tr>
-             <td>${order.total_price}</td>
+            <td>${order.delivery + order.total_price}</td>
              <td>${order.delivery}</td>
+             <td>${order.total_price}</td>
              <td>${order_breads}</td>
              <td>${order_mitbalim}</td>
              <td>${order.adress}</td>
