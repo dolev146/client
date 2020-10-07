@@ -498,6 +498,13 @@ window.onload = () => {
 
 
 
+let deleteBtn = document.querySelector("#delete_table")
+deleteBtn.addEventListener("click", () => {
+    let temp = []
+    localStorage.orders = JSON.stringify(temp)
+    location.reload()
+})
+
 
 
 
