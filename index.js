@@ -476,6 +476,16 @@ Btn_place_order.addEventListener("click", () => {
     sales.sale_1 = 0
     sales.sale_2 = 0
     sales.sale_3 = 0
+
+    for (let i = 1; i < 20; i++) {
+        document.querySelector(`#Span_bread${i}`).textContent = 0
+    }
+    for (let j = 1; j < 12; j++) {
+        document.querySelector(`#Span_mitbalim${j}`).textContent = 0
+    }
+
+
+
 })
 
 
