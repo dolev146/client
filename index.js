@@ -390,7 +390,7 @@ Btn_place_order.addEventListener("click", () => {
                 total_price = total_price - 10
                 sales.sale_1 = sales.sale_1 - 3
             }
-        } else if (sales.sale_1 > 3) {
+        } else if (sales.sale_1 >= 3) {
             total_price = total_price - 10
             sales.sale_1 = sales.sale_1 - 3
         } else {
