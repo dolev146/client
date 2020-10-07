@@ -427,12 +427,12 @@ Btn_place_order.addEventListener("click", () => {
     let orders_From_localStorage = JSON.parse(localStorage.orders)
 
     let html_row = orders_From_localStorage.map(order => {
-      
+
 
         let order_breads = order.breads.map(b => (
-            `  ${b.bread_amount} כמות
+            `     סוג  ${b.bread_type} 
             <br> 
-              סוג  ${b.bread_type} 
+                  ${b.bread_amount} כמות
                 <br> 
                 מחיר ליחידה  ${b.bread_price} 
                 <br>
@@ -440,9 +440,9 @@ Btn_place_order.addEventListener("click", () => {
         ))
 
         let order_mitbalim = order.mitbalim.map(b => (
-            `  ${b.mitbal_amount} כמות
+            `  סוג  ${b.mitbal_type} 
             <br> 
-              סוג  ${b.mitbal_type} 
+            ${b.mitbal_amount} כמות
                 <br> 
                 מחיר ליחידה  ${b.mitbal_price} 
                 <br>
