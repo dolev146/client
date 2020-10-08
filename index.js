@@ -7,7 +7,7 @@ let mitbalim = [
 ]
 
 let sales = {
-    sale_1: 0, // reduce 10 from total price if reach to 3 if reach to 4 reduce the price of the last item / 25 
+    sale_1: 0, // 4    reduce 10 from total price if reach to 3 if reach to 4 reduce the price of the last item / 25 
     sale_2: 0, // reduce 5 if reach to 2
     sale_3: 0 // reduce 4 shekels if 2 
 }
@@ -390,7 +390,7 @@ Btn_place_order.addEventListener("click", () => {
                 total_price = total_price - 10
                 sales.sale_1 = sales.sale_1 - 3
             }
-        } else if (sales.sale_1 >= 3) {
+        } else if (sales.sale_1 > 3) {
             total_price = total_price - 10
             sales.sale_1 = sales.sale_1 - 3
         } else {
